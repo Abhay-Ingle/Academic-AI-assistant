@@ -1,9 +1,20 @@
-.env
+﻿# Virtual environments
+.venv/
+venv/
+
+# Python cache
 __pycache__/
 *.pyc
-data/index/
-data/uploads/
-data/memory.json
-outputs/*
-!outputs/.gitkeep
-.venv/
+*.pyo
+
+# Environment secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp

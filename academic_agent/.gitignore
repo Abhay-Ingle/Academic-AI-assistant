@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+data/index/
+data/uploads/
+data/memory.json
+outputs/*
+!outputs/.gitkeep
+.venv/
