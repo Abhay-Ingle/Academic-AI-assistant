@@ -1,0 +1,20 @@
+# render.yaml – Declarative Render deployment configuration
+# Place this file at the root of your Git repository.
+
+services:
+  - type: web
+    name: academic-agent
+    env: python
+    buildCommand: >-
+      pip install --upgrade pip &&
+      pip install -r academic_agent/requirements.txt
+    startCommand: >-
+      streamlit run academic_agent/app.py \
+        --server.port $PORT \
+        --server.enableCORS false \
+        --server.headless true
+    envVars:
+      - key: OPENAI_API_KEY
+        # Set the actual value in the Render dashboard (do NOT commit secrets).
+    autoDeploy: true
+    healthCheckPath: "/"
